@@ -1,8 +1,8 @@
 import telebot
-from config import TOKEN, keys
+from config import TELEGRAM_TOKEN, keys
 from extensions import APIException, CryptoConverter, choose_plural
 
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 
 @bot.message_handler(commands=['start'])
