@@ -31,7 +31,6 @@ class CryptoConverter:
             raise APIException("Сумма должна быть больше 0.")
 
         response = requests.get(f"https://min-api.cryptocompare.com/data/price?fsym={base_ticker}&tsyms={quote_ticker}")
-        # total_base = json.loads(response.content)[keys[quote]] * amount
         total_base = response.json().get(keys[quote]) * amount
         return total_base
 
