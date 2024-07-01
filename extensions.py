@@ -1,5 +1,4 @@
 from config import keys
-import json
 import requests
 
 
@@ -14,7 +13,6 @@ class CryptoConverter:
         base = base.lower()
         if quote == base:
             raise APIException(f'Введите различные валюты, Вы ввели 2 раза {base}.')
-
         try:
             base_ticker = keys[base]
         except KeyError:

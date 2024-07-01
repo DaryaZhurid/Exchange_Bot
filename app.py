@@ -7,10 +7,10 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 @bot.message_handler(commands=['start'])
 def start(message: telebot.types.Message):
-    text = "Для выполнения расчета введите строку в следующем формате: \n\n" \
-            "валюта_№1  валюта_№2  сумма_валюты_№1\n\n" \
-            "Пример: доллар евро 10 \n\n" \
-            "Список доступных валют: /values"
+    text = "Для выполнения расчета введите строку в следующем формате (через один пробел): \n\n" \
+           "валюта_№1  валюта_№2  сумма_валюты_№1\n\n" \
+           "Пример: доллар евро 10 \n\n" \
+           "Список доступных валют: /values"
     bot.reply_to(message, text)
 
 
@@ -43,5 +43,3 @@ def get_price(message: telebot.types.Message):
 
 
 bot.polling(none_stop=True)
-
-
